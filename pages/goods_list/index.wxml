@@ -1,0 +1,7 @@
+<!-- pages/goods_list/index.wxml -->
+<view class="goods-list">
+  <searchbar></searchbar>
+  <view>
+    <goodslist list="{{goodsList}}"></goodslist>
+  </view>
+</view>

@@ -1,0 +1,114 @@
+{
+  "description": "项目配置文件",
+  "packOptions": {
+    "ignore": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": true,
+    "enhance": false,
+    "postcss": true,
+    "preloadBackgroundData": false,
+    "minified": true,
+    "newFeature": false,
+    "coverView": true,
+    "nodeModules": false,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "bundle": false,
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "userConfirmedBundleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "2.14.1",
+  "appid": "wx70b542b93cb7567a",
+  "projectname": "himall",
+  "debugOptions": {
+    "hidedInDevtools": []
+  },
+  "scripts": {},
+  "isGameTourist": false,
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "商品列表页",
+          "pathName": "pages/goods_list/index",
+          "query": "categoryId=190556",
+          "scene": null
+        },
+        {
+          "name": "pages/search/index",
+          "pathName": "pages/search/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "搜索页",
+          "pathName": "pages/search/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "商品详情页",
+          "pathName": "pages/goods_detail/index",
+          "query": "id=718001",
+          "scene": null
+        },
+        {
+          "name": "确认订单页面",
+          "pathName": "pages/order/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "选择地址页",
+          "pathName": "pages/address/select/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "编辑地址",
+          "pathName": "pages/address/edit/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "购物车",
+          "pathName": "pages/cart/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

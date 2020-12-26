@@ -1,0 +1,4 @@
+<!--pages/category/index.wxml-->
+<view class="category" >
+  <searchbar></searchbar>
+</view>

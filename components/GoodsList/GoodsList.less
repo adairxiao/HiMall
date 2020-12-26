@@ -1,0 +1,47 @@
+.goods-list-box {
+  .goods-list-item {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    border-bottom: 1rpx #ccc solid;
+    padding: 10rpx;
+    .item-img-wrap {
+      flex: 2;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .item-img-wrap .img {
+      width: 70%;
+    }
+
+    .item-info-wrap {
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: space-evenly;
+    }
+
+    .item-info-wrap {
+      font-size: 28rpx;
+      .goods-name,
+      .goods-title {
+        width: 450rpx;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      .goods-name {
+        font-size: 32rpx;
+      }
+
+      .goods-price {
+        color: red;
+      }
+    }
+  }
+}

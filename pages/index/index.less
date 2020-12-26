@@ -1,0 +1,78 @@
+// 轮播图
+.home-swiper {
+  .swiper-item {
+    .swiper-item-img {
+      width: 100%;
+      
+    }
+  }
+}
+//分类
+.home-cate {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  .cate-item {
+    flex-shrink: 1;
+    width: 25%;
+    margin-top: 20rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .cate-icon {
+      width: 80rpx;
+      height: 80rpx;
+    }
+  }
+}
+
+//
+.home-floor {
+  width: 100%;
+  .floor-group {
+    .floor-title {
+      width: 96%;
+      margin: 0 auto;
+    }
+  }
+
+  .floor-group {
+    .floor-box {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      height: 400rpx;
+      image {
+        box-sizing: border-box;
+      }
+      image:first-child {
+        width: 32%;
+        height: 300rpx;
+        flex-grow: 1;
+        background-color: yellow;
+        order: -1;
+        margin-right: 10rpx;
+      }
+
+      image:nth-child(n + 2) {
+        width: 32%;
+        height: 150rpx;
+        background-color: yellowgreen;
+        flex-grow: 1;
+      }
+      image:nth-child(2) {
+        order: -1;
+        margin: 0 10rpx 10rpx 0;
+      }
+      image:nth-child(4) {
+        order: -1;
+        margin-right: 10rpx;
+      }
+      image:nth-child(3) {
+        margin-bottom: 10rpx;
+      }
+    }
+  }
+}

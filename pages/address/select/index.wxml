@@ -1,0 +1,17 @@
+<!-- pages/address/index.wxml -->
+<view class="shipping-address">
+  <block wx:for="{{items}}">
+    <view class="address">
+      <view class="title">
+        {{items.name}}
+        <text class="phone">{{items.phone}}</text>
+      </view>
+      <view class="addr">{{items.addr}} 陕西省西安市未央区凤城四路与朱宏路十字东南角(36平方公里国家级公园东侧)</view>
+    </view>
+    <view class="edit">
+      <view>
+        <text>编辑</text>
+      </view>
+    </view>
+  </block>
+</view>

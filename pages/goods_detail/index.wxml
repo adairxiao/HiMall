@@ -1,0 +1,57 @@
+<!-- pages/goods_detail/index.wxml -->
+<view class="goods-detail">
+  <view class="goods-detail-swiper">
+    <swiper indicator-dots="true" autoplay="true" circular="true">
+      <block wx:for="{{goods.pics !== undefined ?goods.pics:[] }}" wx:for-index="index" wx:key="id">
+        <swiper-item data-index="{{index}}" bindtap="previewImg">
+          <view class="swiper-item">
+            <image class="swiper-item-img" src="{{item.pic}}" mode="aspectFit"></image>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="goods-detail-title">
+    <view class="title-name">{{goods.basicInfo.name}}</view>
+    <view class="title-price">￥{{goods.basicInfo.minPrice}}</view>
+    <view class="title-collect" bind:tap="switchCollect">
+      <text class="iconfont  {{iscollect ? 'icon-shoucang1' : 'icon-shoucang' }}"></text>
+      <view>收藏</view>
+    </view>
+  </view>
+  <view class="goods-detail-presentation">
+    <view class="presentation-title">图文介绍</view>
+    <view class="presentation-content">
+      <rich-text nodes="{{goods.content}}"></rich-text>
+    </view>
+  </view>
+  <view class="goods-detail-tools">
+    <view class="tools-item">
+      <icon class="iconfont  icon-htmal5icon31"></icon>
+      <text>客服</text>
+      <button open-type="contact"></button>
+    </view>
+    <view class="tools-item">
+      <icon class="iconfont  icon-fenxiang"></icon>
+      <text>分享</text>
+      <button open-type="share"></button>
+    </view>
+    <view class="tools-item" bind:tap="addCart">
+      <text>加入购物车</text>
+    </view>
+    <view class="tools-item" bind:tap="buyNow">
+      <text>立即购买</text>
+    </view>
+  </view>
+  <view class="goods-detail-right-tools">
+    <view class="cart-number" hidden="{{cartNum===0}}">
+      <view>{{cartNum}}</view>
+    </view>
+    <view class="cart">
+      <icon class="iconfont icon-gouwuche"></icon>
+    </view>
+    <!-- <view class="blck-top" >
+       <icon class="iconfont icon-fanhuidingbu"></icon>
+    </view> -->
+  </view>
+</view>

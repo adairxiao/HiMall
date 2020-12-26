@@ -1,0 +1,50 @@
+<!-- pages/order/index.wxml -->
+<view class="order">
+  <view class="shipping-address" bind:tap="toAddress">
+    <view class="selected" hidden="{{isAddr}}" style="display:{{isAddr? 'none':'flex'}}">
+      <view class="title">
+        {{name}}adair
+        <text class="phone">{{1232}}</text>
+      </view>
+      <view class="addr">{{addr}} 陕西省西安市未央区凤城四路与朱宏路十字东南角(36平方公里国家级公园东侧)</view>
+    </view>
+    <view class="Unselected">
+      <view>+</view>
+      <view>新增收获地址</view>
+    </view>
+  </view>
+  <view class="goods-detail">
+    <view class="title">商品详情</view>
+    <view class="content">
+      <view class="goods-img"></view>
+      <view class="goods-info">
+        <view class="goods-title">新款韩版宽松开衫棉服羊羔毛外套女秋 冬百搭外套女秋冬百搭</view>
+        <view class="goods-norm">规格：灰色棉服羊羔毛外套100斤以内 色棉服羊羔毛外套100斤以内</view>
+        <view class="goods-num">数量：×1</view>
+        <view class="goods-price">￥125</view>
+      </view>
+    </view>
+  </view>
+  <view class="leave-word">
+    <view class="leave-word-title">留言：</view>
+    <textarea class="leave-word-content" placeholder="请输入留言" placeholder-style="color:#999999;" auto-height maxlength="50"></textarea>
+  </view>
+  <view class="order-info">
+    <view class="total-price">
+      商品总价
+      <text>￥125</text>
+    </view>
+    <view class="haul-price">
+      运费
+      <text>包邮</text>
+    </view>
+  </view>
+  <view class="pay-column">
+    <view class="column-left">
+      <text>共1件，合计：￥125</text>
+    </view>
+    <view class="column-right">
+      <text>支付</text>
+    </view>
+  </view>
+</view>

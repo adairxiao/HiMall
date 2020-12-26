@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "searchbar":"../../components/SearchBar/SearchBar",
+    "goodslist":"../../components/GoodsList/GoodsList"
+  }
+}

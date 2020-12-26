@@ -1,0 +1,65 @@
+.addr-edit .addr-info .linkMan,
+.addr-edit .addr-info .mobile,
+.addr-edit .addr-info .city,
+.addr-edit .addr-info .address {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #666666;
+  padding: 30rpx 28rpx;
+}
+.addr-edit .addr-info .linkMan input,
+.addr-edit .addr-info .mobile input,
+.addr-edit .addr-info .city input,
+.addr-edit .addr-info .address input {
+  text-align: right;
+  flex: 1 0 auto;
+}
+.addr-edit .addr-info .linkMan .input-placeholder,
+.addr-edit .addr-info .mobile .input-placeholder,
+.addr-edit .addr-info .city .input-placeholder,
+.addr-edit .addr-info .address .input-placeholder {
+  color: #ccc;
+}
+.addr-edit .addr-info .linkMan label,
+.addr-edit .addr-info .mobile label,
+.addr-edit .addr-info .city label,
+.addr-edit .addr-info .address label {
+  flex: 1 1 auto;
+  max-width: 150rpx;
+  min-width: 130rpx;
+}
+.addr-edit .addr-info .city picker {
+  flex: 1 0 auto;
+}
+.addr-edit .addr-info .city .picker {
+  width: 100%;
+  text-align: right;
+}
+.addr-edit .addr-info .city .arrow::before {
+  display: block;
+  content: '>';
+}
+.addr-edit .from-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  opacity: 0;
+  z-index: 1;
+}
+.seva-btn {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  background: #fb6993;
+  font-size: 36rpx;
+  font-weight: 500;
+  color: #ffffff;
+}

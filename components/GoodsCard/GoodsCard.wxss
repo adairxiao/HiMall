@@ -1,0 +1,47 @@
+.goods-card {
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+}
+.goods-card .goods-img {
+  flex: 1 0 auto;
+  max-width: 180rpx;
+  padding: 0 20rpx;
+}
+.goods-card .goods-img .img {
+  width: 100%;
+  height: 100%;
+}
+.goods-card .goods-info {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  font-size: 24rpx;
+  font-weight: 500;
+  line-height: 30rpx;
+}
+.goods-card .goods-info .goods-title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: bold;
+  color: #333333;
+}
+.goods-card .goods-info .goods-norm {
+  color: #999999;
+  max-width: 350rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.goods-card .goods-info .goods-num {
+  color: #999999;
+}
+.goods-card .goods-info .goods-price {
+  font-size: 28rpx;
+  color: #fb6993;
+  text-align: right;
+}

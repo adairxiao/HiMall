@@ -1,0 +1,37 @@
+<!-- index.wxml -->
+<view class="home">
+  <searchbar></searchbar>
+  <view class="home-swiper">
+    <swiper class="" indicator-dots="true" autoplay="true" circular="true">
+      <block wx:for="{{swiperList}}" wx:key="id">
+        <swiper-item>
+          <view class="swiper-item">
+            <navigator url="{{item.linkUrl}}">
+              <image class="swiper-item-img" src="{{item.picUrl}}" mode="aspectFit"></image>
+            </navigator>
+          </view>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="home-cate">
+    <block wx:for="{{catesList}}" wx:key="id">
+      <navigator  class="cate-item" wx:if="item.isUse" url="/pages/goods_list/index?categoryId={{item.id}}">
+        <image class="cate-icon" src="{{item.icon}}"></image>
+        <text class="cate-title">{{item.name}}</text>
+      </navigator>
+    </block>
+  </view>
+  <view class="home-floor">
+    <view class="floor-group">
+      <block wx:for="{{FoolList}}" wx:key="id">
+        <view class="floor-title">{{item.name}}</view>
+        <view class="floor-box">
+          <block wx:for="{{item.data}}" wx:for-index="index" wx:key="id">
+            <image class="box-item" src="{{item.icon}}" wx:if="{{index<5}}" />
+          </block>
+        </view>
+      </block>
+    </view>
+  </view>
+</view>

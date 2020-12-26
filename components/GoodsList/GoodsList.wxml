@@ -1,0 +1,13 @@
+<!-- components/GoodsList/goodslist.wxml -->
+<view class="goods-list-box">
+  <view class="goods-list-item" wx:for="{{list}}" wx:key="id" data-itemId = "{{item.id}}" bindtap="clickToPage">
+    <view class="item-img-wrap">
+      <image class="img" src="{{item.pic}}" mode="widthFix" />
+    </view>
+    <view class="item-info-wrap">
+      <view class="goods-name">{{item.name}}</view>
+      <view class="goods-title">{{item.characteristic}}</view>
+      <view class="goods-price">￥{{item.originalPrice}}</view>
+    </view>
+  </view>
+</view>

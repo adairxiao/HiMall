@@ -1,0 +1,11 @@
+<!-- pages/search/index.wxml -->
+<view class="search">
+  <view class="search-bar">
+    <view class="search-input-box">
+      <input class="search-input" type="text" placeholder="搜索" focus="true" bindinput="onInput" />
+    </view>
+  </view>
+  <view class="search-content">
+     <goodslist list="{{goodsList}}"></goodslist>
+  </view>
+</view>
