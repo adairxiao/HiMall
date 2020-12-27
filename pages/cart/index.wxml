@@ -1,8 +1,8 @@
 <!-- pages/cart/index.wxml -->
 <view class="cart">
   <checkbox-group bindchange="change">
-    <view class="cart-list" wx:for="{{Cartinfo}}" wx:for-index="index" wx:key="index" bind:touchmove = "leftToouchMove">
-      <view class="cart-item">
+    <view class="cart-list" wx:for="{{Cartinfo}}" wx:for-index="index" wx:key="index">
+      <view class="cart-item" data-cartItem="{{index}}" bind:touchstart="start" bind:touchmove="leftToouchMove">
         <view class="cart-picker">
           <view>
             <view>
@@ -14,9 +14,9 @@
           <goodscard goodsItem="{{item}}"></goodscard>
         </view>
       </view>
-      <view class="cart-item-delete">
+      <view class="cart-item-delete touch-move-active-{{cartItem===index? direction==='right'? 'hide':'show':'hide'}}">
         <view>
-          <text>删除</text>
+          <text style="display:{{cartItem!==index? 'none':'table-cell' }} ">删除</text>
         </view>
       </view>
     </view>

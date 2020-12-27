@@ -6,10 +6,12 @@ checkbox .wx-checkbox-input {
   border-color: #ccc;
   vertical-align: middle;
 }
+
 /*checkbox选中后样式  */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked {
   background: #fa5251;
 }
+
 /*checkbox选中后图标样式  */
 checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   width: 28rpx;
@@ -23,12 +25,18 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   -webkit-transform: translate(-50%, -50%) scale(1);
 }
 
+.cart{
+  width: 100%;
+  overflow: hidden;
+}
+
 .cart-list {
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: stretch;
   margin: 10rpx 20rpx;
+
   .cart-item {
     flex: 1 1 auto;
     display: flex;
@@ -38,12 +46,14 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     border: solid 1px #000;
     border-radius: 10rpx;
     padding: 30rpx 25rpx;
+
     .cart-picker {
       flex: 0 0 auto;
 
       view {
         height: 100%;
         display: table;
+
         view {
           text-align: center;
           display: table-cell;
@@ -51,22 +61,33 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
         }
       }
     }
+
     .cart-goods-detail {
       flex: 1 1 auto;
     }
-    
+
+  }
+
+  .touch-move-active-show {
+    animation:showMove 0.5s 1 forwards;
+  }
+  // 不生效
+  .touch-move-active-hide {
+    animation:hideMove 1s 1 forwards;
   }
 
   .cart-item-delete {
     flex: 0 0 auto;
-    width: 100rpx;
+    width: 0rpx;
     margin-left: 10rpx;
     background-color: #fa5251;
     border-radius: 10rpx;
+
     view {
       display: table;
       width: 100%;
       height: 100%;
+
       text {
         height: 100%;
         text-align: center;
@@ -76,7 +97,19 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
       }
     }
   }
+
+  @keyframes showMove {
+    form {width: 0rpx;}
+    to {width: 100rpx;}
+  }
+
+  @keyframes hideMove {
+    form {width: 100rpx;}
+    to {width: 0rpx;}
+  }
+
 }
+
 .cart-tools {
   position: fixed;
   left: 0;
@@ -93,6 +126,7 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
     height: 100%;
     display: table;
     margin-right: 30rpx;
+
     view {
       height: 100%;
       text-align: center;
@@ -100,19 +134,23 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
       vertical-align: middle;
     }
   }
+
   .tools-text {
     flex: 1 0 auto;
     height: 100%;
     text-align: right;
     display: table;
     margin-right: 30rpx;
+
     text {
       display: table-cell;
       vertical-align: middle;
     }
   }
+
   .cart-btn {
     flex: 0 0 auto;
+
     // position: relative;
     view {
       position: relative;

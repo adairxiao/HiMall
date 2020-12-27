@@ -110,6 +110,7 @@ Page({
    * 添加购物车数据
    */
   addCart() {
+    console.log(this.goods.basicInfo);
     app.globalData.Cartinfo.push(this.goods.basicInfo)
     this.cartNum++
     this.setData({
@@ -135,7 +136,7 @@ Page({
   buyNow() {
     const self =this
     wx.navigateTo({
-      url: '/pages/order/index',
+      url: '/pages/order/index' ,
       success: function (res) {
         // 通过eventChannel向被打开页面传送数据
         

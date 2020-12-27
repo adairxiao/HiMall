@@ -22,10 +22,6 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   transform: translate(-50%, -50%) scale(1);
   -webkit-transform: translate(-50%, -50%) scale(1);
 }
-.cart {
-  width: 100%;
-  overflow: hidden;
-}
 .cart-list {
   display: flex;
   flex-flow: row nowrap;
@@ -58,18 +54,18 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 .cart-list .cart-item .cart-goods-detail {
   flex: 1 1 auto;
 }
-.cart-list .touch-move-active-show {
-  animation: showMove 0.5s 1 forwards;
-}
-.cart-list .touch-move-active-hide {
-  animation: hideMove 1s 1 forwards;
+.cart-list .touch-move-active {
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
 .cart-list .cart-item-delete {
   flex: 0 0 auto;
-  width: 0rpx;
+  width: 100rpx;
   margin-left: 10rpx;
   background-color: #fa5251;
   border-radius: 10rpx;
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
 }
 .cart-list .cart-item-delete view {
   display: table;
@@ -82,22 +78,6 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
   display: table-cell;
   vertical-align: middle;
   color: white;
-}
-@keyframes showMove {
-  form {
-    width: 0rpx;
-  }
-  to {
-    width: 100rpx;
-  }
-}
-@keyframes hideMove {
-  form {
-    width: 100rpx;
-  }
-  to {
-    width: 0rpx;
-  }
 }
 .cart-tools {
   position: fixed;
