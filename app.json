@@ -17,7 +17,8 @@
     "components/GoodsList/GoodsList",
     "pages/address/select/index",
     "pages/address/edit/index",
-    "components/GoodsCard/GoodsCard"
+    "components/GoodsCard/GoodsCard",
+    "components/LoginBtn/LoginBtn"
   ],
   "window": {
     "backgroundTextStyle": "dark",

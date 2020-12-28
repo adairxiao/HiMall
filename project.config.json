@@ -39,7 +39,7 @@
   },
   "compileType": "miniprogram",
   "libVersion": "2.14.1",
-  "appid": "wx70b542b93cb7567a",
+  "appid": "wxc7fe46aa7fbe1ff9",
   "projectname": "himall",
   "debugOptions": {
     "hidedInDevtools": []
@@ -106,6 +106,11 @@
           "name": "购物车",
           "pathName": "pages/cart/index",
           "query": "",
+          "scene": null
+        },
+        {
+          "name": "我的",
+          "pathName": "pages/user/index",
           "scene": null
         }
       ]

@@ -1,0 +1,10 @@
+<!-- components/LoginBtn/LoginBtn.wxml -->
+<view class="login-btn">
+<block wx:if="{{isLogin}}">
+  <slot></slot>
+</block>
+<block wx:else="{{isLogin}}">
+  <slot></slot>
+  <button open-type="getUserInfo"  bindgetuserinfo="getuserinfo"> </button>
+</block>
+</view>
