@@ -1,43 +1,72 @@
 // components/LoginBtn/LoginBtn.js
 //Component Object
-var appInst =  getApp();
+var appInst = getApp()
+import { request } from './../../request/index'
 
 Component({
   properties: {
-    myProperty:{
-      type:String,
-      value:'',
-      observer: function(){}
+    // 目前为空，跳转页面携带参数需要时使用
+    payload: {
+      type: null,
+      value: null,
+      observer: function () {},
     },
-
   },
   data: {
-    isLogin:true
+    isLogin: false,
   },
   methods: {
-    getuserinfo(e){
-      console.log(e);
-      if(e.detail.errMsg==='getUserInfo:ok'){
-        appInst.globalData.userInfo = e.detail.userInfo
+    getuserinfo(e) {
+      if (e.detail.errMsg === 'getUserInfo:ok') {
+        wx.setStorageSync('user_info', e.detail.userInfo)
 
         // 去登录
+
+        wx.login({
+          timeout: 10000,
+          success: (result) => {
+            request({
+              url: 'https://api.it120.cc/adair007/user/wxapp/login',
+              method: 'Get',
+              data: {
+                code: result.code,
+                autoReg: true,
+              },
+            }).then((res) => {
+              if (!res.code) {
+                wx.setStorageSync('data_token', res.data.data)
+                appInst.globalData.isLogin = true
+                this.setData({
+                  isLogin:appInst.globalData.isLogin
+                })
+              }
+              appInst.globalData.isLogin=false
+              // 登录成功发送事件给父组件
+              this.triggerEvent('onLoginSuccess', {
+                payload: this.data.payload,
+              })
+            })
+          },
+        })
       }
-      
-    }
+    },
+    //已登录状态
+    handleTap: function () {
+      this.triggerEvent('onLoginSuccess', {
+        payload: this.data.payload,
+      })
+    },
   },
-  created: function(){
-
+  created: function () {},
+  attached: function () {
+    
+    console.log('globalData.isLogin',appInst.globalData.isLogin);
   },
-  attached: function(){
-
+  ready: function () {
+    this.setData({
+      isLogin:appInst.globalData.isLogin
+    })
   },
-  ready: function(){
-
-  },
-  moved: function(){
-
-  },
-  detached: function(){
-
-  },
-});
+  moved: function () {},
+  detached: function () {},
+})

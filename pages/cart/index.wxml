@@ -32,9 +32,11 @@
       <text>合计金额：￥265</text>
     </view>
     <view class="cart-btn">
-      <view>
-        <text>结算中</text>
-      </view>
+      <loginbtn bind:onLoginSuccess="jumpToPage">
+        <view>
+          <text>结算中</text>
+        </view>
+      </loginbtn>
     </view>
   </view>
 </view>

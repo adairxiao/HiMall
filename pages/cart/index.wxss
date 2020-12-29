@@ -135,12 +135,11 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked::before {
 }
 .cart-tools .cart-btn {
   flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .cart-tools .cart-btn view {
-  position: relative;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%);
   width: 200rpx;
   height: 75rpx;
   background-color: #fa5251;

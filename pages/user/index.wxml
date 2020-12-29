@@ -1,4 +1,4 @@
 <!-- pages/user/index.wxml -->
-<loginbtn>
-  <view>login</view>
+<loginbtn bind:onLoginSuccess="jumpToPage">
+  <view >login</view>
 </loginbtn>
