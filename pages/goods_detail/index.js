@@ -29,7 +29,10 @@ Page({
     // console.log(options)
     // 初始化购物车数量
 
-    this.cartNum = app.globalData.Cartinfo.length
+    app.globalData.Cartinfo.forEach((element) => {
+      this.cartNum += element.number
+      
+    })
     this.setData({
       cartNum: this.cartNum,
     })
@@ -110,8 +113,17 @@ Page({
    * 添加购物车数据
    */
   addCart() {
-    console.log(this.goods.basicInfo);
-    app.globalData.Cartinfo.push(this.goods.basicInfo)
+    let index = app.globalData.Cartinfo.findIndex((item) => {
+      return item.id === this.goods.basicInfo.id
+    })
+    if (index !== -1) {
+      console.log(index)
+      app.globalData.Cartinfo[index].number++
+    } else {
+      this.goods.basicInfo.number = 1
+      app.globalData.Cartinfo.push(this.goods.basicInfo)
+    }
+
     this.cartNum++
     this.setData({
       cartNum: this.cartNum,
@@ -134,13 +146,13 @@ Page({
    * 去购买
    */
   buyNow() {
-    const self =this
+    let self = this
     wx.navigateTo({
-      url: '/pages/order/index' ,
+      url: '/pages/order/index',
       success: function (res) {
         // 通过eventChannel向被打开页面传送数据
-        
-        res.eventChannel.emit('getGoodsInfo', self.goods.basicInfo)
+        self.goods.basicInfo.number = 1
+        res.eventChannel.emit('acceptGoodsList', [self.goods.basicInfo])
       },
     })
   },

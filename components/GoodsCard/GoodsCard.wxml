@@ -1,12 +1,14 @@
 <!-- components/GoodsCard/GoodsCard.wxml -->
-<view class="goods-card">
-  <view class="goods-img">
-    <image class="img" src="{{goodsItem.pic}}" mode="widthFix"></image>
+<navigator url="/pages/goods_detail/index?id={{goodsItem}}" open-type="navigate">
+  <view class="goods-card">
+    <view class="goods-img">
+      <image class="img" src="{{goodsItem.pic}}" mode="widthFix"></image>
+    </view>
+    <view class="goods-info">
+      <view class="goods-title">{{goodsItem.name}}</view>
+      <view class="goods-norm">规格：{{goodsItem.norm}}</view>
+      <view class="goods-num">数量：×{{goodsItem.number}}</view>
+      <view class="goods-price">￥{{goodsItem.minPrice}}</view>
+    </view>
   </view>
-  <view class="goods-info">
-    <view class="goods-title">{{goodsItem.name}}</view>
-    <view class="goods-norm">规格：{{goodsItem.norm}}</view>
-    <view class="goods-num">数量：×{{goodsItem.minBuyNumber}}</view>
-    <view class="goods-price">￥{{goodsItem.minPrice}}</view>
-  </view>
-</view>
+</navigator>

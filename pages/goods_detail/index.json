@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "searchbar":"../../components/SearchBar/SearchBar"
+    "searchbar":"../../components/SearchBar/SearchBar",
+    "loginbtn":"../../components/LoginBtn/LoginBtn"
   }
-  
 }

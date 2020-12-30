@@ -7,20 +7,25 @@ Page({
    */
   data: {
     Cartinfo: [],
-    checkeds: [],
     ischecked: false,
-
     cartItem: null,
     direction: 'right', //方向
     startX: 0, //开始坐标
     startY: 0,
   },
-  checkeds: [],
+  Cartinfo: [],
+  keepCheckeds: [],
   ischecked: false,
+
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {},
+  onLoad: function (options) {
+    console.log('onLoad');
+    for (let index = 0; index < appInst.globalData.Cartinfo.length; index++) {
+      appInst.globalData.Cartinfo[index].checkeds = false
+    }
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -32,10 +37,7 @@ Page({
    */
   onShow: function () {
     if (appInst.globalData.Cartinfo.lenght !== 0) {
-      for (let index = 0; index < appInst.globalData.Cartinfo.length; index++) {
-        this.checkeds.push(false)
-      }
-
+      this.Cartinfo = appInst.globalData.Cartinfo
       this.setData({
         Cartinfo: appInst.globalData.Cartinfo,
         checkeds: this.checkeds,
@@ -70,31 +72,77 @@ Page({
   /**
    *
    */
-  jumpToPage() {},
+  jumpToPage() {
+    const GoodsList = []
+    console.log(this.Cartinfo)
+    this.Cartinfo.forEach((item) => {
+      if (item['checkeds']) {
+        GoodsList.push(item)
+      }
+    })
+    console.log(GoodsList.length)
+    if (!GoodsList.length) return
+    wx.navigateTo({
+      url: '/pages/order/index',
+      events: {},
+      success: (result) => {
+        result.eventChannel.emit('acceptGoodsList', GoodsList)
+      },
+      fail: () => {},
+      complete: () => {},
+    })
+  },
 
   /**
    * 监听checkbox事件
    */
   change(e) {
-    if (e.detail.value.length === this.checkeds.length) {
-      this.selectAll()
-    } else if (this.ischecked) {
-      this.ischecked = false
-      this.setData({
-        ischecked: this.ischecked,
+    if (e.detail.value.length === 0) {
+      this.Cartinfo.forEach((item, index) => {
+        this.Cartinfo[index]['checkeds'] = false
+        this.setData({
+          ischecked: false,
+          Cartinfo: this.Cartinfo,
+        })
+      })
+      this.keepCheckeds = e.detail.value
+      return
+    }
+
+    if (
+      this.keepCheckeds.length < e.detail.value.length ||
+      this.keepCheckeds.length === e.detail.value.length
+    ) {
+      e.detail.value.forEach((index) => {
+        this.Cartinfo[index]['checkeds'] = true
+      })
+    } else {
+      this.keepCheckeds.forEach((index) => {
+        if (!e.detail.value.includes(index))
+          this.Cartinfo[index]['checkeds'] = false
       })
     }
+
+    this.ischecked = e.detail.value.length === this.Cartinfo.length
+    this.setData({
+      ischecked: this.ischecked,
+      Cartinfo: this.Cartinfo,
+    })
+
+    this.keepCheckeds = e.detail.value
   },
 
   selectAll() {
-    for (let index = 0; index < this.checkeds.length; index++) {
-      this.checkeds[index] = !this.ischecked
-    }
+    let e = {}
+    e.detail = { value: [] }
+
     this.ischecked = !this.ischecked
-    this.setData({
-      ischecked: this.ischecked,
-      checkeds: this.checkeds,
-    })
+
+    if (this.ischecked) {
+      e.detail = { value: this.Cartinfo.map((e, i) => i) }
+    }
+
+    this.change(e)
   },
   /**
    *获取xy轴坐标

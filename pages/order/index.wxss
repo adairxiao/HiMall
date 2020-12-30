@@ -49,50 +49,16 @@
   font-weight: 500;
   color: #333333;
   line-height: 30rpx;
+  padding: 10rpx;
 }
 .goods-detail .content {
   display: flex;
   justify-content: center;
-  flex-flow: row nowrap;
-}
-.goods-detail .content .goods-img {
-  flex: 1 0 auto;
-  min-width: 30%;
-}
-.goods-detail .content .goods-info {
-  flex: 1 1 auto;
-  display: flex;
-  justify-content: center;
   flex-flow: column nowrap;
-  font-size: 24rpx;
-  font-weight: 500;
-  line-height: 30rpx;
 }
-.goods-detail .content .goods-info .goods-title {
-  margin-bottom: 20rpx;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-weight: bold;
-  color: #333333;
-}
-.goods-detail .content .goods-info .goods-norm {
-  color: #999999;
-  max-width: 350rpx;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-.goods-detail .content .goods-info .goods-num {
-  color: #999999;
-}
-.goods-detail .content .goods-info .goods-price {
-  margin-top: 50rpx;
-  font-size: 28rpx;
-  color: #fb6993;
-  text-align: right;
+.goods-detail .content .goods-card {
+  flex: 1 0 auto;
+  margin: 10rpx 0;
 }
 .leave-word {
   display: flex;

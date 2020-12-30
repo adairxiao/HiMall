@@ -86,10 +86,15 @@
   display: table-cell;
   vertical-align: middle;
 }
-.goods-detail-tools .tools-item:nth-child(4) {
+.goods-detail-tools loginbtn {
   flex: 2 1 auto;
   background-color: #eb4450;
   color: white;
+  text-align: center;
+}
+.goods-detail-tools loginbtn .tools-last-item {
+  height: 90rpx;
+  line-height: 90rpx;
 }
 .goods-detail-right-tools {
   width: 100rpx;
@@ -107,10 +112,12 @@
   text-align: center;
   display: table;
 }
-.goods-detail-right-tools .cart .iconfont {
-  font-size: 30px;
+.goods-detail-right-tools .cart .cart-iconfont {
   display: table-cell;
   vertical-align: middle;
+}
+.goods-detail-right-tools .cart .cart-iconfont .iconfont {
+  font-size: 30px;
 }
 .goods-detail-right-tools .cart-number {
   position: relative;

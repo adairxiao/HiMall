@@ -6,7 +6,7 @@
         <view class="cart-picker">
           <view>
             <view>
-              <checkbox value="{{index}}" checked="{{checkeds[index]}}" />
+              <checkbox value="{{index}}" checked="{{item.checkeds}}" />
             </view>
           </view>
         </view>

@@ -1,8 +1,12 @@
 /* components/LoginBtn/LoginBtn.wxss */
-.container{
+.container {
   position: relative;
 }
-.auth{
+button {
+  padding:0;
+  margin: 0;
+}
+.auth {
   position: absolute;
   left: 0;
   top: 0;

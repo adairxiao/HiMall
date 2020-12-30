@@ -39,16 +39,22 @@
     <view class="tools-item" bind:tap="addCart">
       <text>加入购物车</text>
     </view>
-    <view class="tools-item" bind:tap="buyNow">
-      <text>立即购买</text>
-    </view>
+    <loginbtn>
+      <view class="tools-last-item" bind:tap="buyNow">
+        <text>立即购买</text>
+      </view>
+    </loginbtn>
   </view>
   <view class="goods-detail-right-tools">
     <view class="cart-number" hidden="{{cartNum===0}}">
       <view>{{cartNum}}</view>
     </view>
     <view class="cart">
-      <icon class="iconfont icon-gouwuche"></icon>
+      <view class="cart-iconfont" hover-class="none" hover-stop-propagation="false">
+        <navigator url="/pages/cart/index" open-type="switchTab">
+          <icon class="iconfont icon-gouwuche"></icon>
+        </navigator>
+      </view>
     </view>
     <!-- <view class="blck-top" >
        <icon class="iconfont icon-fanhuidingbu"></icon>

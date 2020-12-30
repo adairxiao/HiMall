@@ -4,19 +4,25 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isAddr:false
+    isAddr: false,
+    goodList: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log('onLoad');
+    const self =this
     //  监听getGoodsInfo事件，获取上一页面通过eventChannel传送到当前页面的数据
     try {
       const eventChannel = this.getOpenerEventChannel()
-      console.log(eventChannel)
-      eventChannel.on('getGoodsInfo', function (data) {
+      // console.log(eventChannel)
+      eventChannel.on('acceptGoodsList', function (data) {
         console.log(data)
+        self.setData({
+          goodList: data,
+        })
       })
     } catch (error) {
       if (error.name === 'TypeError') {
@@ -24,7 +30,6 @@ Page({
       } else {
         throw error
       }
-      
     }
   },
 
@@ -62,14 +67,12 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {},
-  toAddress(){
+  toAddress() {
     wx.navigateTo({
       url: '/pages/address/select/index',
-      success: (result)=>{
-        
-      },
-      fail: ()=>{},
-      complete: ()=>{}
-    });
+      success: (result) => {},
+      fail: () => {},
+      complete: () => {},
+    })
   },
 })

@@ -16,12 +16,8 @@
   <view class="goods-detail">
     <view class="title">商品详情</view>
     <view class="content">
-      <view class="goods-img"></view>
-      <view class="goods-info">
-        <view class="goods-title">新款韩版宽松开衫棉服羊羔毛外套女秋 冬百搭外套女秋冬百搭</view>
-        <view class="goods-norm">规格：灰色棉服羊羔毛外套100斤以内 色棉服羊羔毛外套100斤以内</view>
-        <view class="goods-num">数量：×1</view>
-        <view class="goods-price">￥125</view>
+      <view class="goods-card" wx:for="{{goodList}}" wx:key="index">
+        <goodscard goodsItem = "{{item}}" ></goodscard>
       </view>
     </view>
   </view>
