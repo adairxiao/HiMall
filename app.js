@@ -67,7 +67,7 @@ App({
           if (!result.data.code) {
             this.globalData.isLogin = true
           }
-          console.log('app:',this.globalData.isLogin)
+         
         },
         fail: () => {},
         complete: () => {},

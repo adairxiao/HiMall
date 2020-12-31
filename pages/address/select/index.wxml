@@ -1,17 +1,19 @@
 <!-- pages/address/index.wxml -->
-<view class="shipping-address">
-  <block wx:for="{{items}}">
+<view class="select">
+  <view class="shipping-address" wx:for="{{addrlist}}" wx:for-index="index" wx:key="index">
     <view class="address">
       <view class="title">
-        {{items.name}}
-        <text class="phone">{{items.phone}}</text>
+        {{item.linkMan}}
+        <text class="phone">{{item.mobile}}</text>
       </view>
-      <view class="addr">{{items.addr}} 陕西省西安市未央区凤城四路与朱宏路十字东南角(36平方公里国家级公园东侧)</view>
+      <view class="addr">{{item.provinceStr}}{{item.cityStr}}{{item.areaStr}}{{item.address}}</view>
     </view>
-    <view class="edit">
-      <view>
-        <text>编辑</text>
-      </view>
+    <view class="edit" data-addrItem="{{addrlist[index]}}" bindtap="toPage">
+     
+        <view>
+          <text>编辑</text>
+        </view>
+      
     </view>
-  </block>
+  </view>
 </view>

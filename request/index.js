@@ -27,7 +27,6 @@ export const request = (params) => {
       complete: () => {
         ajaxTimes--
         if (ajaxTimes === 0) {
-          console.log('run')
           wx.hideLoading()
           wx.stopPullDownRefresh()
         }
